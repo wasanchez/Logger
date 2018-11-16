@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Belatrix.Test", "Belatrix.Test\Belatrix.Test.csproj", "{5B390F11-9EE9-4A70-BB58-C2BC3F25FECF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Belatrix.Test.Logger", "Belatrix.Test.Logger\Belatrix.Test.Logger.csproj", "{ABFB18CE-9018-4F80-85A1-FDDC4244D57C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5B390F11-9EE9-4A70-BB58-C2BC3F25FECF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B390F11-9EE9-4A70-BB58-C2BC3F25FECF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B390F11-9EE9-4A70-BB58-C2BC3F25FECF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B390F11-9EE9-4A70-BB58-C2BC3F25FECF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABFB18CE-9018-4F80-85A1-FDDC4244D57C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABFB18CE-9018-4F80-85A1-FDDC4244D57C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABFB18CE-9018-4F80-85A1-FDDC4244D57C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABFB18CE-9018-4F80-85A1-FDDC4244D57C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
