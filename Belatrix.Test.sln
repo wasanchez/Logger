@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Belatrix.Test", "Belatrix.T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Belatrix.Test.Logger", "Belatrix.Test.Logger\Belatrix.Test.Logger.csproj", "{ABFB18CE-9018-4F80-85A1-FDDC4244D57C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestConsol", "TestConsol\TestConsol.csproj", "{7ED03623-B631-44F6-A2E8-01254724B2CB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,5 +21,9 @@ Global
 		{ABFB18CE-9018-4F80-85A1-FDDC4244D57C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ABFB18CE-9018-4F80-85A1-FDDC4244D57C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ABFB18CE-9018-4F80-85A1-FDDC4244D57C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7ED03623-B631-44F6-A2E8-01254724B2CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7ED03623-B631-44F6-A2E8-01254724B2CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7ED03623-B631-44F6-A2E8-01254724B2CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7ED03623-B631-44F6-A2E8-01254724B2CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

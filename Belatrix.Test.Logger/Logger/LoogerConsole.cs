@@ -1,23 +1,54 @@
 ﻿using System;
-using Belatrix.Test.Logger.Interface;
+using Belatrix.Test.Logger.Constants;
 
 namespace Belatrix.Test.Logger.Logger
 {
-    public class LoogerConsole : ILogger
+    /// <summary>
+    /// Looger console.
+    /// </summary>
+    public class LoogerConsole : BaseLogger
     {
-        public void LogError(string message)
+        /// <summary>
+        /// Log the specified message and logType.
+        /// </summary>
+        /// <param name="message">Message.</param>
+        /// <param name="logType">Log type.</param>
+        public override void Log(string message, LogType logType)
         {
-            throw new NotImplementedException();
+            base.Log(message, logType);
+
+            if (base.CanLogAllTypes || IsLogTypeInList(logType))
+            {
+                Console.ForegroundColor = GetColor(logType);
+                Console.WriteLine(GetFormattedMessage(message, logType));
+            }
         }
 
-        public void LogInfo(string message)
-        {
-            throw new NotImplementedException();
+        /// <summary>
+        /// Gets the color.
+        /// </summary>
+        /// <returns>The color.</returns>
+        /// <param name="logType">Log type.</param>
+        private System.ConsoleColor GetColor(LogType logType) {
+            System.ConsoleColor color;
+
+            switch (logType)
+            {
+                case LogType.Info:
+                    color = ConsoleColor.White;
+                    break;
+                case LogType.Error:
+                    color = ConsoleColor.Red;
+                    break;
+                case LogType.Warning:
+                    color = ConsoleColor.Yellow;
+                    break;
+                default:
+                    color = ConsoleColor.White;
+                    break;
+            }
+            return color;
         }
 
-        public void LogWarning(string message)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

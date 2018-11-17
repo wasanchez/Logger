@@ -3,10 +3,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{ABFB18CE-9018-4F80-85A1-FDDC4244D57C}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <RootNamespace>Belatrix.Test.Logger</RootNamespace>
-    <AssemblyName>Belatrix.Test.Logger</AssemblyName>
+    <ProjectGuid>{7ED03623-B631-44F6-A2E8-01254724B2CB}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>TestConsol</RootNamespace>
+    <AssemblyName>TestConsol</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -17,35 +17,30 @@
     <DefineConstants>DEBUG;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <ConsolePause>false</ConsolePause>
+    <ExternalConsole>true</ExternalConsole>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <Optimize>true</Optimize>
     <OutputPath>bin\Release</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <ConsolePause>false</ConsolePause>
+    <ExternalConsole>true</ExternalConsole>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Data" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Interface\ILogger.cs" />
-    <Compile Include="Logger\LoogerConsole.cs" />
-    <Compile Include="Logger\LoogerText.cs" />
-    <Compile Include="Logger\LoggerDatabase.cs" />
-    <Compile Include="Logger\BaseLogger.cs" />
-    <Compile Include="Constants\LogType.cs" />
-    <Compile Include="Constants\CommonConstants.cs" />
-    <Compile Include="JobLogger.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Interface\" />
-    <Folder Include="Logger\" />
-    <Folder Include="Constants\" />
+    <ProjectReference Include="..\Belatrix.Test.Logger\Belatrix.Test.Logger.csproj">
+      <Project>{ABFB18CE-9018-4F80-85A1-FDDC4244D57C}</Project>
+      <Name>Belatrix.Test.Logger</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
