@@ -18,11 +18,13 @@ namespace Belatrix.Test.Logger.Logger
         {
             try
             {
-                WriteLog(message, logType);
+                if (CanLogAllTypes || IsLogTypeInList(logType))
+                {
+                    WriteLog(message, logType);
+                }
             }
             catch (System.Exception ex)
             {
-                base.Log(message, logType);
                 base.LogError(string.Format("Error trying to write log into database. Exception: {0}.", ex.ToString()));
             }
         }
@@ -31,7 +33,15 @@ namespace Belatrix.Test.Logger.Logger
         /// Initializes a new instance of the <see cref="T:Belatrix.Test.Logger.Logger.LoggerDatabase"/> class.
         /// </summary>
         public LoggerDatabase() {
-            _connectionString = ConfigurationManager.ConnectionStrings[CommonConstants.DatabaseLogKey].ConnectionString;
+            try
+            {
+                _connectionString = ConfigurationManager.ConnectionStrings[CommonConstants.DatabaseLogKey].ConnectionString;
+            }
+            catch (System.Exception ex)
+            {
+                base.LogError(string.Format("Error trying to configure the database logger. Exception: {0}", ex.ToString()));
+                throw ex;
+            }
         }
 
         /// <summary>
@@ -40,7 +50,7 @@ namespace Belatrix.Test.Logger.Logger
         private void WriteLog(string message, LogType logType) {
 
             using(var connection = new SqlConnection(_connectionString)) {
-                connection.Open();
+                //connection.Open();
                 //using (var command = new SqlCommand(, connection))
             }
         }

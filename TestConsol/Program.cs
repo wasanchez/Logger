@@ -8,7 +8,7 @@ namespace TestConsol
     {
         public static void Main(string[] args)
         {
-            ILogger logger = new LoogerConsole();
+            ILogger logger = new LoggerDatabase();
             for (var i = 0; i < 10; i++) {
                 logger.LogInfo(string.Format( "Test message {0}", i));
                 logger.LogError(string.Format("Test log error message {0}", i));
