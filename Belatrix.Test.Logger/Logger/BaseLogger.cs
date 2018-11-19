@@ -16,6 +16,19 @@ namespace Belatrix.Test.Logger.Logger
         private string logLevelTypes = LogType.All.ToString("G").ToLower();
 
         /// <summary>
+        /// Gets or sets a value indicating whether this <see cref="T:Belatrix.Test.Logger.Logger.BaseLogger"/> is
+        /// logger enabled.
+        /// </summary>
+        /// <value><c>true</c> if is logger enabled; otherwise, <c>false</c>.</value>
+        protected bool IsLoggerEnabled { get; set; }
+
+        /// <summary>
+        /// Gets or sets the support.
+        /// </summary>
+        /// <value>The support.</value>
+        protected string Support { get; set; }
+
+        /// <summary>
         /// The read write lock slim.
         /// </summary>
         protected readonly ReaderWriterLockSlim readerWriterLockSlim = new ReaderWriterLockSlim();
@@ -33,6 +46,8 @@ namespace Belatrix.Test.Logger.Logger
         /// <param name="logType">Log type.</param>
         public virtual void Log(string message, LogType logType)
         {
+            if (!IsLoggerEnabled) return;
+            
             readerWriterLockSlim.EnterWriteLock();
             try
             {
@@ -122,9 +137,12 @@ namespace Belatrix.Test.Logger.Logger
                     if (!logLevel.Contains(LogType.All.ToString("G").ToLower()))
                         logLevelTypes = logLevel;
                 }
+                Support = ConfigurationManager.AppSettings[CommonConstants.LoggerSupportKey]?.ToLower();
+                IsLoggerEnabled = !string.IsNullOrEmpty(Support) && !Support.Contains(LoggingSupport.None.ToString("G").ToLower());
             }
             catch (Exception ex)
             {
+                Support = string.Empty;
                 throw new Exception("Error on configuration logs", ex.InnerException);
             }
         }

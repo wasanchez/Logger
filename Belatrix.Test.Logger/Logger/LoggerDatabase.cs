@@ -6,6 +6,22 @@ namespace Belatrix.Test.Logger.Logger
 {
     public class LoggerDatabase : BaseLogger
     {   
+        /// <summary>
+        /// Gets a value indicating whether this <see cref="T:Belatrix.Test.Logger.Logger.LoggerDatabase"/> is database enabled.
+        /// </summary>
+        /// <value><c>true</c> if is database enabled; otherwise, <c>false</c>.</value>
+        public bool IsDatabaseEnabled
+        {
+            get
+            {
+                return IsLoggerEnabled && Support.Contains(LoggingSupport.Database.ToString("G").ToLower());
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the connection string.
+        /// </summary>
+        /// <value>The connection string.</value>
         private string ConnectionString { get; set; }
         /// <summary>
         /// Log the specified message and logType.
@@ -16,6 +32,9 @@ namespace Belatrix.Test.Logger.Logger
         {
             try
             {
+                if (!IsDatabaseEnabled)
+                    return;
+
                 if (CanLogAllTypes || IsLogTypeInList(logType))
                 {
                     WriteLog(message, logType);

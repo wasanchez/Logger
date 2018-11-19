@@ -11,6 +11,7 @@ namespace Belatrix.Test.Logger.Constants
 
     public enum LoggingSupport
     {
+        None,
         TextFile,
         Console,
         Database

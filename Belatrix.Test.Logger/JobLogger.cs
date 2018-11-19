@@ -30,54 +30,8 @@ namespace Belatrix.Test.Logger
                 }
                 return instance;
             }
-        }
+        }      
 
-        /// <summary>
-        /// Gets or sets the support.
-        /// </summary>
-        /// <value>The support.</value>
-        private string Support { get; set; }
-
-        /// <summary>
-        /// Gets a value indicating whether this <see cref="T:Belatrix.Test.Logger.JobLogger"/> is database logger.
-        /// </summary>
-        /// <value><c>true</c> if is database logger; otherwise, <c>false</c>.</value>
-        private bool IsDatabaseLogger
-        {
-            get
-            {
-                return (!string.IsNullOrEmpty(Support) && Support.Contains(LoggingSupport.Database.ToString("G").ToLower()));
-            }
-        }
-
-        /// <summary>
-        /// Gets a value indicating whether this <see cref="T:Belatrix.Test.Logger.JobLogger"/> is text file logger.
-        /// </summary>
-        /// <value><c>true</c> if is text file logger; otherwise, <c>false</c>.</value>
-        private bool IsTextFileLogger
-        {
-            get
-            {
-                //By default, It will log in text file
-                if (!IsDatabaseLogger && !IsConsoleLogger)
-                {
-                    return true;
-                }
-                return (!string.IsNullOrEmpty(Support) && Support.Contains(LoggingSupport.TextFile.ToString("G").ToLower()));
-            }
-        }
-
-        /// <summary>
-        /// Gets a value indicating whether this <see cref="T:Belatrix.Test.Logger.JobLogger"/> is console logger.
-        /// </summary>
-        /// <value><c>true</c> if is console logger; otherwise, <c>false</c>.</value>
-        private bool IsConsoleLogger
-        {
-            get
-            {
-                return (!string.IsNullOrEmpty(Support) && Support.Contains(LoggingSupport.Console.ToString("G").ToLower()));
-            }
-        }
 
         /// <summary>
         /// The logger console.
@@ -93,14 +47,7 @@ namespace Belatrix.Test.Logger
         /// The logger database.
         /// </summary>
         private readonly ILogger loggerDatabase = new LoggerDatabase();
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="T:Belatrix.Test.Logger.JobLogger"/> class.
-        /// </summary>
-        public JobLogger()
-        {
-            Support = ConfigurationManager.AppSettings[CommonConstants.LoggerSupportKey]?.ToLower();           
-        }
+             
 
         /// <summary>
         /// Logs the error.
@@ -108,12 +55,9 @@ namespace Belatrix.Test.Logger
         /// <param name="message">Message.</param>
         public void LogError(string message)
         {
-            if (IsTextFileLogger)
-                loggerText.Log(message, LogType.Error);
-            if (IsDatabaseLogger)
-                loggerDatabase.Log(message, LogType.Error);
-            if (IsConsoleLogger)
-                loggerConsole.Log(message, LogType.Error);
+            loggerText.Log(message, LogType.Error);
+            loggerDatabase.Log(message, LogType.Error);
+            loggerConsole.Log(message, LogType.Error);
         }
 
         /// <summary>
@@ -122,12 +66,9 @@ namespace Belatrix.Test.Logger
         /// <param name="message">Message.</param>
         public void LogInfo(string message)
         {
-            if (IsTextFileLogger)
-                loggerText.Log(message, LogType.Info);
-            if (IsDatabaseLogger)
-                loggerDatabase.Log(message, LogType.Info);
-            if (IsConsoleLogger)
-                loggerConsole.Log(message, LogType.Info);
+            loggerText.Log(message, LogType.Info);
+            loggerDatabase.Log(message, LogType.Info);
+            loggerConsole.Log(message, LogType.Info);
         }
 
         /// <summary>
@@ -136,12 +77,9 @@ namespace Belatrix.Test.Logger
         /// <param name="message">Message.</param>
         public void LogWarning(string message)
         {
-            if (IsTextFileLogger)
-                loggerText.Log(message, LogType.Warning);
-            if (IsDatabaseLogger)
-                loggerDatabase.Log(message, LogType.Warning);
-            if (IsConsoleLogger)
-                loggerConsole.Log(message, LogType.Warning);
+            loggerText.Log(message, LogType.Warning);
+            loggerDatabase.Log(message, LogType.Warning);
+            loggerConsole.Log(message, LogType.Warning);
         }
     }
 }

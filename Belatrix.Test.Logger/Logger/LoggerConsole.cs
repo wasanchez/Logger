@@ -9,18 +9,32 @@ namespace Belatrix.Test.Logger.Logger
     public class LoogerConsole : BaseLogger
     {
         /// <summary>
+        /// Gets a value indicating whether this <see cref="T:Belatrix.Test.Logger.Logger.LoogerConsole"/> is console enabled.
+        /// </summary>
+        /// <value><c>true</c> if is console enabled; otherwise, <c>false</c>.</value>
+        private bool IsConsoleEnabled
+        {
+            get
+            {
+                return IsLoggerEnabled && Support.Contains(LoggingSupport.Console.ToString("G").ToLower());
+            }
+        }
+
+        /// <summary>
         /// Log the specified message and logType.
         /// </summary>
         /// <param name="message">Message.</param>
         /// <param name="logType">Log type.</param>
         public override void Log(string message, LogType logType)
         {
-            base.Log(message, logType);
+            if (!IsConsoleEnabled)
+                return;
 
             if (base.CanLogAllTypes || IsLogTypeInList(logType))
             {
                 Console.ForegroundColor = GetColor(logType);
                 Console.WriteLine(GetFormattedMessage(message, logType));
+                Console.ResetColor();
             }
         }
 
