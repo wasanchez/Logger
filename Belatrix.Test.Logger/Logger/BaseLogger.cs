@@ -114,8 +114,15 @@ namespace Belatrix.Test.Logger.Logger
         /// <returns>The file name.</returns>
         private string GetFileName()
         {
+            var directory = ConfigurationManager.AppSettings[CommonConstants.LogFileDirectoryKey];
+            directory = string.IsNullOrEmpty(directory) ? CommonConstants.DefaultLogFileDirectory : directory;
             var fileName = string.Format(CommonConstants.LogFileName, DateTime.Now.ToString(CommonConstants.LogFileDateFormat));
-            return Path.Combine(ConfigurationManager.AppSettings[CommonConstants.LogFileDirectoryKey], fileName);
+
+            if (!string.IsNullOrEmpty(directory) && !Directory.Exists(directory))
+            {
+                Directory.CreateDirectory(directory);
+            }
+            return Path.Combine(directory, fileName);
         }
 
         /// <summary>

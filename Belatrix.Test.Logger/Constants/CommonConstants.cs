@@ -18,6 +18,11 @@ namespace Belatrix.Test.Logger.Constants
         public static string LogFileDirectoryKey = "LogFileDirectory";
 
         /// <summary>
+        /// The default file directory
+        /// </summary>
+        public static string DefaultLogFileDirectory = ".";
+
+        /// <summary>
         /// The log file date format.
         /// </summary>
         public static string LogFileDateFormat = "ddMMyyyy";
