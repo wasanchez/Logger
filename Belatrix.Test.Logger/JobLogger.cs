@@ -1,16 +1,23 @@
-﻿using System;
-using System.Configuration;
+﻿using System.Configuration;
 using Belatrix.Test.Logger.Constants;
 using Belatrix.Test.Logger.Interface;
 using Belatrix.Test.Logger.Logger;
 
 namespace Belatrix.Test.Logger
 {
+    /// <summary>
+    /// Job logger is a simple logger
+    /// It could be configure as a text file logger, console logger or database logger
+    /// </summary>
     public class JobLogger : IJobLogger
     {
         private static readonly object loggerLock = new object();
        
         private static JobLogger instance;
+        /// <summary>
+        /// Gets the instance of JobLogger.
+        /// </summary>
+        /// <value>The instance.</value>
         public static JobLogger Instance {
             get
             {
@@ -25,8 +32,16 @@ namespace Belatrix.Test.Logger
             }
         }
 
+        /// <summary>
+        /// Gets or sets the support.
+        /// </summary>
+        /// <value>The support.</value>
         private string Support { get; set; }
 
+        /// <summary>
+        /// Gets a value indicating whether this <see cref="T:Belatrix.Test.Logger.JobLogger"/> is database logger.
+        /// </summary>
+        /// <value><c>true</c> if is database logger; otherwise, <c>false</c>.</value>
         private bool IsDatabaseLogger
         {
             get
@@ -35,6 +50,10 @@ namespace Belatrix.Test.Logger
             }
         }
 
+        /// <summary>
+        /// Gets a value indicating whether this <see cref="T:Belatrix.Test.Logger.JobLogger"/> is text file logger.
+        /// </summary>
+        /// <value><c>true</c> if is text file logger; otherwise, <c>false</c>.</value>
         private bool IsTextFileLogger
         {
             get
@@ -48,6 +67,10 @@ namespace Belatrix.Test.Logger
             }
         }
 
+        /// <summary>
+        /// Gets a value indicating whether this <see cref="T:Belatrix.Test.Logger.JobLogger"/> is console logger.
+        /// </summary>
+        /// <value><c>true</c> if is console logger; otherwise, <c>false</c>.</value>
         private bool IsConsoleLogger
         {
             get
@@ -64,18 +87,25 @@ namespace Belatrix.Test.Logger
         /// <summary>
         /// The logger text.
         /// </summary>
-        private readonly ILogger loggerText = new LoogerConsole();
+        private readonly ILogger loggerText = new LoogerText();
 
         /// <summary>
         /// The logger database.
         /// </summary>
-        private readonly ILogger loggerDatabase = new LoogerConsole();
+        private readonly ILogger loggerDatabase = new LoggerDatabase();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="T:Belatrix.Test.Logger.JobLogger"/> class.
+        /// </summary>
         public JobLogger()
         {
             Support = ConfigurationManager.AppSettings[CommonConstants.LoggerSupportKey]?.ToLower();           
         }
 
+        /// <summary>
+        /// Logs the error.
+        /// </summary>
+        /// <param name="message">Message.</param>
         public void LogError(string message)
         {
             if (IsTextFileLogger)
@@ -86,6 +116,10 @@ namespace Belatrix.Test.Logger
                 loggerConsole.Log(message, LogType.Error);
         }
 
+        /// <summary>
+        /// Logs the information.
+        /// </summary>
+        /// <param name="message">Message.</param>
         public void LogInfo(string message)
         {
             if (IsTextFileLogger)
@@ -96,6 +130,10 @@ namespace Belatrix.Test.Logger
                 loggerConsole.Log(message, LogType.Info);
         }
 
+        /// <summary>
+        /// Logs the warning.
+        /// </summary>
+        /// <param name="message">Message.</param>
         public void LogWarning(string message)
         {
             if (IsTextFileLogger)

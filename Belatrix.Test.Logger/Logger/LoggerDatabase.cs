@@ -56,6 +56,7 @@ namespace Belatrix.Test.Logger.Logger
                     command.Parameters.Add(new SqlParameter("LogType", (int)logType));
                     command.ExecuteNonQuery();
                 }
+                connection.Close();
             }
         }
 

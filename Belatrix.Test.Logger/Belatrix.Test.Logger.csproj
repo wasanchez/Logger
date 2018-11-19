@@ -36,8 +36,8 @@
     <Compile Include="Interface\IJobLogger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Interface\ILogger.cs" />
-    <Compile Include="Logger\LoogerConsole.cs" />
-    <Compile Include="Logger\LoogerText.cs" />
+    <Compile Include="Logger\LoggerConsole.cs" />
+    <Compile Include="Logger\LoggerText.cs" />
     <Compile Include="Logger\LoggerDatabase.cs" />
     <Compile Include="Logger\BaseLogger.cs" />
     <Compile Include="Constants\LogType.cs" />
