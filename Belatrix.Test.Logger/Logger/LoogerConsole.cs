@@ -29,8 +29,8 @@ namespace Belatrix.Test.Logger.Logger
         /// </summary>
         /// <returns>The color.</returns>
         /// <param name="logType">Log type.</param>
-        private System.ConsoleColor GetColor(LogType logType) {
-            System.ConsoleColor color;
+        private ConsoleColor GetColor(LogType logType) {
+            ConsoleColor color;
 
             switch (logType)
             {

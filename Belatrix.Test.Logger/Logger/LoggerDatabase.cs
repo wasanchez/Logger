@@ -5,10 +5,8 @@ using Belatrix.Test.Logger.Constants;
 namespace Belatrix.Test.Logger.Logger
 {
     public class LoggerDatabase : BaseLogger
-    {
-        private readonly string _connectionString;
-        const string _command = "insert into Log values ({0}, {1})";
-
+    {   
+        private string ConnectionString { get; set; }
         /// <summary>
         /// Log the specified message and logType.
         /// </summary>
@@ -35,7 +33,7 @@ namespace Belatrix.Test.Logger.Logger
         public LoggerDatabase() {
             try
             {
-                _connectionString = ConfigurationManager.ConnectionStrings[CommonConstants.DatabaseLogKey].ConnectionString;
+                ConnectionString = ConfigurationManager.ConnectionStrings[CommonConstants.DatabaseLogKey].ConnectionString;
             }
             catch (System.Exception ex)
             {
@@ -49,12 +47,17 @@ namespace Belatrix.Test.Logger.Logger
         /// </summary>
         private void WriteLog(string message, LogType logType) {
 
-            using(var connection = new SqlConnection(_connectionString)) {
-                //connection.Open();
-                //using (var command = new SqlCommand(, connection))
+            using(var connection = new SqlConnection(ConnectionString)) {
+                connection.Open();
+                using (var command = new SqlCommand(CommonConstants.DatabaseLoggerCmd, connection))
+                {
+                    command.CommandType = System.Data.CommandType.StoredProcedure;
+                    command.Parameters.Add(new SqlParameter("Message", message));
+                    command.Parameters.Add(new SqlParameter("LogType", (int)logType));
+                    command.ExecuteNonQuery();
+                }
             }
         }
-
 
     }
 }

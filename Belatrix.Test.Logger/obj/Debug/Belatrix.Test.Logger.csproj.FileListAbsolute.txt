@@ -1,0 +1,6 @@
+C:\Users\williams\Source\Repos\Logger\Belatrix.Test.Logger\bin\Debug\Belatrix.Test.Logger.dll
+C:\Users\williams\Source\Repos\Logger\Belatrix.Test.Logger\bin\Debug\Belatrix.Test.Logger.pdb
+C:\Users\williams\Source\Repos\Logger\Belatrix.Test.Logger\obj\Debug\Belatrix.Test.Logger.csprojAssemblyReference.cache
+C:\Users\williams\Source\Repos\Logger\Belatrix.Test.Logger\obj\Debug\Belatrix.Test.Logger.csproj.CoreCompileInputs.cache
+C:\Users\williams\Source\Repos\Logger\Belatrix.Test.Logger\obj\Debug\Belatrix.Test.Logger.dll
+C:\Users\williams\Source\Repos\Logger\Belatrix.Test.Logger\obj\Debug\Belatrix.Test.Logger.pdb

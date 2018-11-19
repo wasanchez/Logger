@@ -41,5 +41,12 @@ namespace Belatrix.Test.Logger.Constants
         /// The database log key.
         /// </summary>
         public static string DatabaseLogKey = "DatabaseLogger";
+
+        /// <summary>
+        /// The database log command.
+        /// </summary>
+        public static string DatabaseLoggerCmd = "LOG_CREATE";
+
+        public static string LoggerSupportKey = "LoggingSupport";
     }
 }

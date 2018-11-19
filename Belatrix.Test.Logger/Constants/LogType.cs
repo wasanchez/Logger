@@ -8,4 +8,11 @@ namespace Belatrix.Test.Logger.Constants
         Warning,
         All
     }
+
+    public enum LoggingSupport
+    {
+        TextFile,
+        Console,
+        Database
+    }
 }

@@ -11,7 +11,7 @@ namespace Belatrix.Test.Logger.Logger
     /// Base class logger.
     /// This class write in text file by default.
     /// </summary>
-    public class BaseLogger : ILogger
+    public class BaseLogger : ILogger, IJobLogger
     {
         private string logLevelTypes = LogType.All.ToString("G").ToLower();
 
