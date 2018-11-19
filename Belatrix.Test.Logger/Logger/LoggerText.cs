@@ -5,7 +5,7 @@ namespace Belatrix.Test.Logger.Logger
     /// <summary>
     /// Looger text.
     /// </summary>
-    public class LoogerText : BaseLogger
+    public class LoggerText : BaseLogger
     {
         /// <summary>
         /// Gets or sets a value indicating whether this <see cref="T:Belatrix.Test.Logger.Logger.LoogerText"/> is text

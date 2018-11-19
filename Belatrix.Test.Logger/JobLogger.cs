@@ -36,12 +36,12 @@ namespace Belatrix.Test.Logger
         /// <summary>
         /// The logger console.
         /// </summary>
-        private readonly ILogger loggerConsole = new LoogerConsole();
+        private readonly ILogger loggerConsole = new LoggerConsole();
 
         /// <summary>
         /// The logger text.
         /// </summary>
-        private readonly ILogger loggerText = new LoogerText();
+        private readonly ILogger loggerText = new LoggerText();
 
         /// <summary>
         /// The logger database.

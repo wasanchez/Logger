@@ -6,7 +6,7 @@ namespace Belatrix.Test.Logger.Logger
     /// <summary>
     /// Looger console.
     /// </summary>
-    public class LoogerConsole : BaseLogger
+    public class LoggerConsole : BaseLogger
     {
         /// <summary>
         /// Gets a value indicating whether this <see cref="T:Belatrix.Test.Logger.Logger.LoogerConsole"/> is console enabled.
