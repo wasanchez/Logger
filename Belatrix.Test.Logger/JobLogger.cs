@@ -1,5 +1,4 @@
-﻿using System.Configuration;
-using Belatrix.Test.Logger.Constants;
+﻿using Belatrix.Test.Logger.Constants;
 using Belatrix.Test.Logger.Interface;
 using Belatrix.Test.Logger.Logger;
 

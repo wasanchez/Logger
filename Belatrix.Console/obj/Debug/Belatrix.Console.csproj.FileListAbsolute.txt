@@ -1,3 +1,13 @@
+C:/Users/williams/Source/Repos/Logger/Belatrix.Console/bin/Debug/TestConsol.exe.config
+C:/Users/williams/Source/Repos/Logger/Belatrix.Console/bin/Debug/TestConsol.exe
+C:/Users/williams/Source/Repos/Logger/Belatrix.Console/bin/Debug/TestConsol.pdb
+C:/Users/williams/Source/Repos/Logger/Belatrix.Console/bin/Debug/Belatrix.Test.Logger.dll
+C:/Users/williams/Source/Repos/Logger/Belatrix.Console/bin/Debug/Belatrix.Test.Logger.pdb
+C:/Users/williams/Source/Repos/Logger/Belatrix.Console/obj/Debug/Belatrix.Console.csprojAssemblyReference.cache
+C:/Users/williams/Source/Repos/Logger/Belatrix.Console/obj/Debug/Belatrix.Console.csproj.CoreCompileInputs.cache
+C:/Users/williams/Source/Repos/Logger/Belatrix.Console/obj/Debug/Belatrix.Console.csproj.CopyComplete
+C:/Users/williams/Source/Repos/Logger/Belatrix.Console/obj/Debug/TestConsol.exe
+C:/Users/williams/Source/Repos/Logger/Belatrix.Console/obj/Debug/TestConsol.pdb
 /Users/wsanchez/Projects/Belatrix.Test/Belatrix.Console/bin/Debug/TestConsol.exe.config
 /Users/wsanchez/Projects/Belatrix.Test/Belatrix.Console/bin/Debug/TestConsol.exe
 /Users/wsanchez/Projects/Belatrix.Test/Belatrix.Console/bin/Debug/TestConsol.pdb
@@ -8,13 +18,3 @@
 /Users/wsanchez/Projects/Belatrix.Test/Belatrix.Console/obj/Debug/Belatrix.Console.csproj.CopyComplete
 /Users/wsanchez/Projects/Belatrix.Test/Belatrix.Console/obj/Debug/TestConsol.exe
 /Users/wsanchez/Projects/Belatrix.Test/Belatrix.Console/obj/Debug/TestConsol.pdb
-C:\Users\williams\Source\Repos\Logger\Belatrix.Console\bin\Debug\TestConsol.exe.config
-C:\Users\williams\Source\Repos\Logger\Belatrix.Console\bin\Debug\TestConsol.exe
-C:\Users\williams\Source\Repos\Logger\Belatrix.Console\bin\Debug\TestConsol.pdb
-C:\Users\williams\Source\Repos\Logger\Belatrix.Console\bin\Debug\Belatrix.Test.Logger.dll
-C:\Users\williams\Source\Repos\Logger\Belatrix.Console\bin\Debug\Belatrix.Test.Logger.pdb
-C:\Users\williams\Source\Repos\Logger\Belatrix.Console\obj\Debug\Belatrix.Console.csprojAssemblyReference.cache
-C:\Users\williams\Source\Repos\Logger\Belatrix.Console\obj\Debug\Belatrix.Console.csproj.CoreCompileInputs.cache
-C:\Users\williams\Source\Repos\Logger\Belatrix.Console\obj\Debug\Belatrix.Console.csproj.CopyComplete
-C:\Users\williams\Source\Repos\Logger\Belatrix.Console\obj\Debug\TestConsol.exe
-C:\Users\williams\Source\Repos\Logger\Belatrix.Console\obj\Debug\TestConsol.pdb
